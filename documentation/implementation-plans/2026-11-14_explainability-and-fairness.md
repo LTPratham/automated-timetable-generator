@@ -2,7 +2,7 @@
 
 **Date:** 2026-11-14  
 **Project:** Automated Timetable Generation System using Constraint-Based Search (CSE276 - Project 20, Group 18)  
-**Authors:** S V Pavan Kumar Kondamuri, Sawarkar Prathmesh Arun, Jeet Nag  
+**Authors:** Sawarkar Prathmesh Arun, Siya Gupta, Bhavya Verma  
 
 ---
 

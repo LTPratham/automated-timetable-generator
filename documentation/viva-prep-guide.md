@@ -1,7 +1,7 @@
 # CSE276 Course Project: Viva Preparation Guide
 
 **Project Topic:** Project 20 — Automated Timetable Generation using Constraint-Based Search  
-**Group 18:** S V Pavan Kumar Kondamuri, Sawarkar Prathmesh Arun, Jeet Nag  
+**Group 18:** Sawarkar Prathmesh Arun, Siya Gupta, Bhavya Verma  
 
 ---
 
