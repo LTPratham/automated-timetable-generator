@@ -3,7 +3,7 @@
 **Course:** CSE276 – Artificial Intelligence Foundations | Academic Session 2026–27  
 **Institution:** Lovely Professional University (LPU)  
 **Section:** K4P25CB | **Group:** 18 | **Project No.:** 20  
-**GitHub Repository:** *[URL to be added after push]*  
+**GitHub Repository:** [https://github.com/LTPratham/automated-timetable-generator](https://github.com/LTPratham/automated-timetable-generator)  
 
 ---
 
@@ -11,7 +11,7 @@
 
 | # | Name | Registration No. | Roll No. | GitHub Profile | Project Responsibilities |
 |---|---|---|---|---|---|
-| 1 | **Sawarkar Prathmesh Arun** | 12509401 | — | — | Project Lead & Core CSP Search Engine Architecture |
+| 1 | **Sawarkar Prathmesh Arun** | 12509401 | — | [@LTPratham](https://github.com/LTPratham) | Project Lead & Core CSP Search Engine Architecture |
 | 2 | **Siya Gupta** | 12505235 | 23 | [@siyagupta3103](https://github.com/siyagupta3103) | Algorithm Design, Web UI & Interactive Guided Tour |
 | 3 | **Bhavya Verma** | 12513794 | 44 | [@bhavyaverma81](https://github.com/bhavyaverma81) | Responsible AI Fairness Audit, Testing & Documentation |
 
