@@ -6,7 +6,7 @@
 - **Institution**: Lovely Professional University (LPU)
 - **Section**: K4P25CB
 - **Group 18**:
-  - Sawarkar Prathmesh Arun (`12509401`) — Roll No: —
+  - Sawarkar Prathmesh Arun (`12509401`) — Roll No: 47 — GitHub: @LTPratham
   - Siya Gupta (`12505235`) — Roll No: 23 — GitHub: @siyagupta3103
   - Bhavya Verma (`12513794`) — Roll No: 44 — GitHub: @bhavyaverma81
 - **Assigned Topic**: Project 20 — Automated Timetable Generation using Constraint-Based Search

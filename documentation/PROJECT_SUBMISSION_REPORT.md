@@ -11,7 +11,7 @@
 
 | # | Name | Registration No. | Roll No. | GitHub Profile | Project Responsibilities |
 |---|---|---|---|---|---|
-| 1 | **Sawarkar Prathmesh Arun** | 12509401 | — | [@LTPratham](https://github.com/LTPratham) | Project Lead & Core CSP Search Engine Architecture |
+| 1 | **Sawarkar Prathmesh Arun** | 12509401 | 47 | [@LTPratham](https://github.com/LTPratham) | Project Lead & Core CSP Search Engine Architecture |
 | 2 | **Siya Gupta** | 12505235 | 23 | [@siyagupta3103](https://github.com/siyagupta3103) | Algorithm Design, Web UI & Interactive Guided Tour |
 | 3 | **Bhavya Verma** | 12513794 | 44 | [@bhavyaverma81](https://github.com/bhavyaverma81) | Responsible AI Fairness Audit, Testing & Documentation |
 
