@@ -1,0 +1,9 @@
+id,name,department,max_hours_per_day,unavailable_slots,preferred_slots
+FAC_TURING,Dr. Alan Turing,CSE,3,"[(<DayOfWeek.FRIDAY: 'Friday'>, 4), (<DayOfWeek.FRIDAY: 'Friday'>, 5)]","[0, 1]"
+FAC_LOVELACE,Dr. Ada Lovelace,CSE,4,"[(<DayOfWeek.MONDAY: 'Monday'>, 0)]","[1, 2]"
+FAC_NEUMANN,Dr. John von Neumann,CSE,4,[],"[2, 3]"
+FAC_HOPPER,Dr. Grace Hopper,CSE,4,"[(<DayOfWeek.WEDNESDAY: 'Wednesday'>, 5)]","[0, 1, 2]"
+FAC_KNUTH,Dr. Donald Knuth,CSE,3,"[(<DayOfWeek.TUESDAY: 'Tuesday'>, 0), (<DayOfWeek.TUESDAY: 'Tuesday'>, 1)]","[3, 4]"
+FAC_DIJKSTRA,Dr. Edsger Dijkstra,CSE,3,[],"[1, 2]"
+FAC_LISKOV,Dr. Barbara Liskov,CSE,4,[],"[0, 1]"
+FAC_HINTON,Dr. Geoffrey Hinton,CSE,3,"[(<DayOfWeek.THURSDAY: 'Thursday'>, 0)]","[4, 5]"

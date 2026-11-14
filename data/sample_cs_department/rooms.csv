@@ -1,0 +1,8 @@
+id,name,capacity,room_type,building
+LH-101,Lecture Hall 101,65,THEORY,Block A
+LH-102,Lecture Hall 102,65,THEORY,Block A
+LH-201,Lecture Hall 201,70,THEORY,Block B
+CR-301,Classroom 301,55,THEORY,Block B
+LAB-A,Software Engineering Lab A,60,LAB,IT Block
+LAB-B,Systems & Networks Lab B,60,LAB,IT Block
+LAB-AI,AI & Robotics Lab,55,LAB,Innovation Center

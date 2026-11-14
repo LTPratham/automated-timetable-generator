@@ -1,0 +1,16 @@
+id,code,title,batch_id,faculty_id,course_type,sessions_per_week,duration_slots,is_heavy
+C_CS301_A,CS301,Data Structures & Algorithms,CS_SEM3_A,FAC_TURING,THEORY,3,1,True
+C_CS301_LAB_A,CS301L,Data Structures Lab,CS_SEM3_A,FAC_TURING,LAB,1,2,False
+C_CS302_A,CS302,Digital Logic & Architecture,CS_SEM3_A,FAC_NEUMANN,THEORY,3,1,False
+C_CS303_A,CS303,Discrete Mathematics,CS_SEM3_A,FAC_DIJKSTRA,THEORY,3,1,True
+C_CS301_B,CS301,Data Structures & Algorithms,CS_SEM3_B,FAC_KNUTH,THEORY,3,1,True
+C_CS301_LAB_B,CS301L,Data Structures Lab,CS_SEM3_B,FAC_KNUTH,LAB,1,2,False
+C_CS302_B,CS302,Digital Logic & Architecture,CS_SEM3_B,FAC_NEUMANN,THEORY,3,1,False
+C_CS303_B,CS303,Discrete Mathematics,CS_SEM3_B,FAC_DIJKSTRA,THEORY,3,1,True
+C_CS501,CS501,Database Management Systems,CS_SEM5,FAC_LISKOV,THEORY,3,1,False
+C_CS501_LAB,CS501L,Database Systems Lab,CS_SEM5,FAC_LISKOV,LAB,1,2,False
+C_CS502,CS502,Operating Systems,CS_SEM5,FAC_HOPPER,THEORY,3,1,True
+C_CS502_LAB,CS502L,Operating Systems Lab,CS_SEM5,FAC_HOPPER,LAB,1,2,False
+C_CS701,CS701,Artificial Intelligence & ML,CS_SEM7,FAC_HINTON,THEORY,3,1,True
+C_CS701_LAB,CS701L,AI & Machine Learning Lab,CS_SEM7,FAC_HINTON,LAB,1,2,False
+C_CS702,CS702,Compiler Design & Theory,CS_SEM7,FAC_LOVELACE,THEORY,3,1,True
