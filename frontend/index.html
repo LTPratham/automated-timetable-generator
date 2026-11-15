@@ -1575,12 +1575,6 @@
       html += '</tbody>';
       table.innerHTML = html;
     }
-        html += '</tr>';
-      });
-
-      html += '</tbody>';
-      table.innerHTML = html;
-    }
 
     function populateRescheduleDropdowns() {
       const facSel = document.getElementById('reschedule-faculty');
@@ -2269,18 +2263,6 @@
             <td>${st.course_code || st.variable_id || '—'}</td>
             <td>${slotText}</td>
             <td style="font-size:11.5px;color:#555;">${st.detail.replace(/<[^>]*>/g, '')}</td>
-          </tr>
-        `;
-      });
-    }
-        const badge = isBt ? '<span class="badge-backtrack">BACKTRACK</span>' : '<span class="badge-assign">ASSIGN</span>';
-        tbody.innerHTML += `
-          <tr onclick="renderStepperStep(${i})" style="cursor:pointer;">
-            <td><b>#${i+1}</b></td>
-            <td>${badge}</td>
-            <td>${st.course_code || st.variable_id || '—'}</td>
-            <td>${st.assigned_slot || '—'}</td>
-            <td style="font-size:11.5px;color:#555;">${st.details || st.heuristic_info || 'Consistent'}</td>
           </tr>
         `;
       });
