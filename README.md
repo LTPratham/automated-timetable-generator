@@ -4,7 +4,7 @@
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.115+-009688.svg)](https://fastapi.tiangolo.com)
 [![Streamlit](https://img.shields.io/badge/Streamlit-1.40+-FF4B4B.svg)](https://streamlit.io)
 [![OR-Tools](https://img.shields.io/badge/Google%20OR--Tools-9.15+-orange.svg)](https://developers.google.com/optimization)
-[![Tests Passing](https://img.shields.io/badge/tests-13%20passed-brightgreen.svg)]()
+[![Tests Passing](https://img.shields.io/badge/tests-14%20passed-brightgreen.svg)]()
 [![Responsible AI](https://img.shields.io/badge/Fairness-Gini%200.081-success.svg)]()
 
 > **Course Project:** CSE276 · Artificial Intelligence Foundations (2026–27)  
@@ -44,12 +44,18 @@
    - Student cohort morning vs afternoon fatigue distribution.
    - PII-free privacy compliance and documented failure modes.
 5. **Interactive Step-by-Step Search Visualizer**:
-   - Step forward/backward through the CSP search tree to watch the AI select variables, prune domains, and backtrack live.
-6. **Emergency "What-If" Rescheduler**:
+   - Step forward/backward through the CSP search tree to watch the AI select variables, prune domains, and backtrack live with MRV diagnostics.
+6. **Conversational AI Timetable Copilot**:
+   - Natural language assistant answering scheduling queries: busiest faculty, professor availability, room usage, and instant what-if contingencies.
+7. **5-Axis Multi-Objective Quality Radar**:
+   - Evaluates schedule fitness across mathematical constraint integrity, faculty equity, student spacing, campus room efficiency, and morning/afternoon distribution.
+8. **Mobile Calendar QR Sync & Master Grid**:
+   - Instant scannable QR codes for mobile sync into Google & Apple Calendar, plus a Master University Grid view across all student cohorts.
+9. **Emergency "What-If" Rescheduler**:
    - Dynamic simulation for sudden faculty sick leave or room maintenance shutdowns, reallocating sessions with minimal schedule perturbation.
-7. **Interactive Conflict Network**:
+10. **Interactive Conflict Network**:
    - Force-directed **NetworkX** graph visualizing course clashing relationships and chromatic slot coloring (Graph Coloring).
-8. **One-Click Multi-Format Export**:
+11. **One-Click Multi-Format Export**:
    - Formatted color-coded **Excel (.xlsx)** workbooks.
    - Print-ready notice-board **PDF (.pdf)** documents.
    - RFC 5545 **iCalendar (.ics)** direct sync with Google Calendar, Outlook, and Apple Calendar.

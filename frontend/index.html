@@ -604,6 +604,189 @@
       color: #4b5563;
       text-decoration: underline;
     }
+
+    /* ==========================================================================
+       AI Copilot Drawer & Widget
+       ========================================================================== */
+    .copilot-launcher {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: linear-gradient(135deg, #2563eb, #1d4ed8);
+      color: #ffffff;
+      border: none;
+      border-radius: 30px;
+      padding: 12px 20px;
+      font-size: 13px;
+      font-weight: 700;
+      box-shadow: 0 8px 24px rgba(37, 99, 235, 0.35);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      z-index: 999;
+      transition: all 0.2s ease;
+    }
+    .copilot-launcher:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 28px rgba(37, 99, 235, 0.45);
+    }
+    .copilot-drawer {
+      position: fixed;
+      bottom: 84px;
+      right: 24px;
+      width: 420px;
+      max-width: calc(100vw - 32px);
+      height: 560px;
+      max-height: calc(100vh - 120px);
+      background: #ffffff;
+      border: 1px solid var(--color-border-default);
+      border-radius: 12px;
+      box-shadow: 0 16px 48px rgba(0,0,0,0.18);
+      display: none;
+      flex-direction: column;
+      z-index: 1000;
+      overflow: hidden;
+      animation: popIn 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .copilot-drawer.open {
+      display: flex;
+    }
+    .copilot-header {
+      background: #0f172a;
+      color: #ffffff;
+      padding: 14px 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .copilot-body {
+      flex: 1;
+      padding: 16px;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      background: #fafaf9;
+    }
+    .copilot-msg {
+      max-width: 88%;
+      padding: 10px 14px;
+      border-radius: 10px;
+      font-size: 12.5px;
+      line-height: 1.45;
+    }
+    .copilot-msg.bot {
+      background: #ffffff;
+      color: #1e293b;
+      align-self: flex-start;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+    }
+    .copilot-msg.user {
+      background: #2563eb;
+      color: #ffffff;
+      align-self: flex-end;
+    }
+    .copilot-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 8px;
+    }
+    .copilot-chip {
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      color: #1d4ed8;
+      font-size: 11px;
+      padding: 4px 9px;
+      border-radius: 14px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: background 0.15s;
+    }
+    .copilot-chip:hover {
+      background: #dbeafe;
+    }
+    .copilot-footer {
+      padding: 10px 14px;
+      background: #ffffff;
+      border-top: 1px solid #e2e8f0;
+      display: flex;
+      gap: 8px;
+    }
+    .copilot-input {
+      flex: 1;
+      border: 1px solid #cbd5e1;
+      border-radius: 6px;
+      padding: 8px 12px;
+      font-size: 12.5px;
+      outline: none;
+    }
+    .copilot-input:focus {
+      border-color: #2563eb;
+    }
+    .copilot-send-btn {
+      background: #2563eb;
+      color: #fff;
+      border: none;
+      padding: 8px 14px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    /* ==========================================================================
+       Stepper Controls
+       ========================================================================== */
+    .stepper-bar {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: #ffffff;
+      padding: 12px 18px;
+      border: 1px solid var(--color-border-default);
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+    .stepper-btn {
+      padding: 7px 12px;
+      background: #f1f5f9;
+      border: 1px solid #cbd5e1;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 12px;
+      font-weight: 600;
+    }
+    .stepper-btn:hover {
+      background: #e2e8f0;
+    }
+    .stepper-slider {
+      flex: 1;
+      accent-color: #2563eb;
+    }
+    .stepper-card-active {
+      border: 2px solid #2563eb !important;
+      background: #eff6ff !important;
+    }
+    .badge-backtrack {
+      background: #fef2f2;
+      border: 1px solid #fecaca;
+      color: #b91c1c;
+      padding: 2px 7px;
+      border-radius: 4px;
+      font-size: 11px;
+      font-weight: 700;
+    }
+    .badge-assign {
+      background: #f0fdf4;
+      border: 1px solid #bbf7d0;
+      color: #15803d;
+      padding: 2px 7px;
+      border-radius: 4px;
+      font-size: 11px;
+      font-weight: 700;
+    }
   </style>
 </head>
 <body>
@@ -621,6 +804,8 @@
       <li class="nav-item active" onclick="switchTab('explorer')">📊 Timetable Explorer</li>
       <li class="nav-item" onclick="switchTab('benchmark')">⚡ Algorithm Arena</li>
       <li class="nav-item" onclick="switchTab('fairness')">⚖️ Responsible AI & Fairness</li>
+      <li class="nav-item" onclick="switchTab('stepper')">🎬 CSP Search Stepper</li>
+      <li class="nav-item" onclick="switchTab('quality')">🎯 Quality Radar</li>
       <li class="nav-item" onclick="switchTab('rescheduler')">🚨 'What-If' Rescheduler</li>
       <li class="nav-item" onclick="switchTab('graph')">🕸️ Conflict Topology</li>
       <li class="nav-item" onclick="switchTab('data')">⚙️ Academic Registry</li>
@@ -647,8 +832,14 @@
         <p>Constraint Satisfaction Formulation (CSP) • MRV & Degree Heuristics • Forward Checking • AC-3 • OR-Tools Benchmark</p>
       </div>
       <div style="display:flex;gap:10px;align-items:center;">
+        <button class="btn-secondary" onclick="openQrModal()" style="display:flex;align-items:center;gap:6px;padding:9px 14px;border-radius:6px;font-size:12px;background:#fff;cursor:pointer;">
+          <span>📱</span> Mobile QR Sync
+        </button>
         <button class="btn-secondary" onclick="window.location.href='/landing.html'" style="display:flex;align-items:center;gap:6px;padding:9px 14px;border-radius:6px;font-size:12px;background:#fff;cursor:pointer;">
           <span>🏠</span> Project Showcase
+        </button>
+        <button class="btn-primary" onclick="toggleCopilot()" style="display:flex;align-items:center;gap:6px;padding:9px 14px;border-radius:6px;font-size:12px;background:#2563eb;color:#fff;cursor:pointer;border:none;">
+          <span>🤖</span> AI Copilot
         </button>
         <button class="btn-primary" onclick="startTour(true)" style="display:flex;align-items:center;gap:6px;padding:9px 16px;border-radius:6px;font-size:12px;background:#111;color:#fff;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,0.12);">
           <span>✨</span> Interactive Website Guide
@@ -717,11 +908,15 @@
           <div style="display:flex;gap:12px;align-items:center;">
             <span style="font-weight:600;font-size:12px;">Filter By:</span>
             <select id="filter-type" onchange="updateFilterDropdown()">
-              <option value="batch">Student Cohort</option>
+              <option value="all">🏫 Master University Grid (All Cohorts)</option>
+              <option value="batch" selected>Student Cohort</option>
               <option value="faculty">Faculty Member</option>
               <option value="room">Physical Facility / Room</option>
             </select>
             <select id="filter-target" onchange="renderTimetableGrid()"></select>
+            <button class="btn-secondary" onclick="openQrModal()" style="font-size:11.5px;padding:6px 12px;cursor:pointer;display:flex;align-items:center;gap:4px;">
+              <span>📱</span> QR Sync
+            </button>
           </div>
         </div>
 
@@ -958,6 +1153,204 @@
       </div>
     </div>
 
+    <!-- ==================== 7. CSP SEARCH STEPPER PANEL ==================== -->
+    <div id="panel-stepper" class="panel">
+      <div class="view-card">
+        <div class="panel-header">
+          <h2>🎬 CSP Search Tree & Propagation Stepper</h2>
+          <span style="font-size:11px;font-weight:600;padding:3px 8px;border-radius:4px;background:#eff6ff;color:#1d4ed8;border:1px solid #bfdbfe;">
+            Under-The-Hood AI Execution
+          </span>
+        </div>
+        <p style="color:var(--color-text-primary);margin-bottom:16px;">
+          Live step-by-step playback of the Backtracking Search algorithm. Watch how <strong>MRV (Minimum Remaining Values)</strong> selects variables, how <strong>Forward Checking</strong> prunes conflicting domain values, and how the algorithm <strong>Backtracks</strong> when a domain wipeout occurs.
+        </p>
+
+        <!-- Stepper Controls Bar -->
+        <div class="stepper-bar">
+          <button class="stepper-btn" onclick="stepperJumpStart()">⏮️ Start</button>
+          <button class="stepper-btn" onclick="stepperPrev()">◀️ Step Back</button>
+          <button class="stepper-btn" id="stepper-play-btn" onclick="toggleStepperPlay()">▶️ Auto Play</button>
+          <button class="stepper-btn" onclick="stepperNext()">Step Forward ▶️</button>
+          <button class="stepper-btn" onclick="stepperJumpEnd()">⏭️ End</button>
+          <input type="range" id="stepper-slider" class="stepper-slider" min="0" max="0" value="0" oninput="stepperScrub(this.value)">
+          <span id="stepper-counter" style="font-weight:700;font-size:12px;font-family:var(--font-family-mono);min-width:70px;text-align:right;">Step 0/0</span>
+        </div>
+
+        <!-- Current Step Status Cards -->
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-bottom:20px;">
+          <div class="kpi-card" id="stepper-card-action">
+            <div class="kpi-label">Algorithm Action</div>
+            <div class="kpi-value" id="stepper-action" style="font-size:16px;">Ready</div>
+            <div id="stepper-action-badge" class="badge-assign">Initialized</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-label">Target Session Variable</div>
+            <div class="kpi-value" id="stepper-var" style="font-size:15px;">—</div>
+            <div class="kpi-badge" id="stepper-var-sub">MRV Choice</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-label">Assigned Value / Slot</div>
+            <div class="kpi-value" id="stepper-slot" style="font-size:15px;">—</div>
+            <div class="kpi-badge" id="stepper-domain-badge">Domain Status</div>
+          </div>
+        </div>
+
+        <!-- Explanation & Conflict Log -->
+        <div style="background:var(--color-surface-strong);border:1px solid var(--color-border-default);border-radius:8px;padding:16px;margin-bottom:20px;">
+          <h4 style="font-size:12px;font-weight:700;text-transform:uppercase;margin-bottom:6px;color:#1e293b;">
+            🧠 CSP Search Reasoning
+          </h4>
+          <p id="stepper-reason" style="font-size:13px;line-height:20px;color:#334155;">
+            Click <strong>Step Forward</strong> or <strong>Auto Play</strong> to visualize constraint satisfaction search steps in real-time.
+          </p>
+        </div>
+
+        <!-- Step Trace Log Table -->
+        <h3 style="font-size:13px;margin-bottom:10px;">📋 Execution Step Log (Recent Steps)</h3>
+        <table class="data-table" id="stepper-log-table">
+          <thead>
+            <tr>
+              <th style="width:70px;">Step #</th>
+              <th>Action Type</th>
+              <th>Session</th>
+              <th>Assigned Value</th>
+              <th>Details / Reason</th>
+            </tr>
+          </thead>
+          <tbody id="stepper-log-body"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ==================== 8. QUALITY RADAR PANEL ==================== -->
+    <div id="panel-quality" class="panel">
+      <div class="view-card">
+        <div class="panel-header">
+          <h2>🎯 Multi-Objective Timetable Quality Radar</h2>
+          <button class="btn-primary" onclick="loadQualityRadar()">🔄 Refresh Metrics</button>
+        </div>
+        <p style="color:var(--color-text-primary);margin-bottom:20px;">
+          Holistic 5-dimensional evaluation of timetable fitness: balancing mathematical constraint integrity, ethical faculty workloads, student cognitive ergonomics, campus energy efficiency, and time distribution.
+        </p>
+
+        <!-- Quality Overview Header -->
+        <div style="display:grid;grid-template-columns:1fr 2fr;gap:24px;margin-bottom:24px;align-items:center;">
+          <div style="background:linear-gradient(135deg, #0f172a, #1e293b);color:#fff;border-radius:12px;padding:24px;text-align:center;">
+            <div style="font-size:11px;text-transform:uppercase;letter-spacing:0.05em;color:#94a3b8;margin-bottom:4px;">Holistic Quality Grade</div>
+            <div id="radar-grade" style="font-size:38px;font-weight:800;color:#38bdf8;margin-bottom:6px;">—</div>
+            <div id="radar-score-pill" style="display:inline-block;padding:4px 12px;background:rgba(255,255,255,0.1);border-radius:20px;font-size:12px;font-weight:600;">Overall Score: — / 100</div>
+          </div>
+
+          <div style="display:grid;grid-template-columns:repeat(3, 1fr);gap:12px;">
+            <div class="kpi-card">
+              <div class="kpi-label">Constraint Integrity</div>
+              <div class="kpi-value" id="qm-integrity">100%</div>
+              <div class="kpi-badge">Zero Hard Clashes</div>
+            </div>
+            <div class="kpi-card">
+              <div class="kpi-label">Faculty Equity</div>
+              <div class="kpi-value" id="qm-fairness">—</div>
+              <div class="kpi-badge">Gini Balanced</div>
+            </div>
+            <div class="kpi-card">
+              <div class="kpi-label">Student Spacing</div>
+              <div class="kpi-value" id="qm-compactness">—</div>
+              <div class="kpi-badge">Min Idle Gaps</div>
+            </div>
+            <div class="kpi-card">
+              <div class="kpi-label">Room Utilization</div>
+              <div class="kpi-value" id="qm-room">—</div>
+              <div class="kpi-badge">Energy Optimal</div>
+            </div>
+            <div class="kpi-card">
+              <div class="kpi-label">Circadian Balance</div>
+              <div class="kpi-value" id="qm-time">—</div>
+              <div class="kpi-badge">AM/PM Ratio</div>
+            </div>
+            <div class="kpi-card">
+              <div class="kpi-label">Algorithm Paradigm</div>
+              <div class="kpi-value" style="font-size:15px;color:#2563eb;">Multi-Paradigm</div>
+              <div class="kpi-badge">CSP Benchmark</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Radar Chart & Insights -->
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;">
+          <div>
+            <h3 style="font-size:13px;margin-bottom:10px;">🕸️ 5-Axis Spider Radar Chart</h3>
+            <div id="quality-radar-chart" style="height:360px;background:#ffffff;border:1px solid var(--color-border-default);border-radius:8px;"></div>
+          </div>
+          <div>
+            <h3 style="font-size:13px;margin-bottom:10px;">💡 Optimization Insights & Key Findings</h3>
+            <div id="radar-insights-list" style="display:flex;flex-direction:column;gap:10px;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MOBILE QR SYNC MODAL -->
+    <div id="qr-modal" class="modal-backdrop" onclick="closeModalOnBackdrop(event)">
+      <div class="modal-dialog" onclick="event.stopPropagation()" style="max-width:440px;text-align:center;">
+        <button class="modal-close-btn" onclick="closeQrModal()">✕</button>
+        <div style="font-size:32px;margin-bottom:8px;">📱</div>
+        <h2 style="font-size:18px;margin-bottom:4px;">Mobile Calendar Sync</h2>
+        <p id="qr-subtitle" style="font-size:12px;color:var(--color-text-primary);margin-bottom:18px;">
+          Scan with your iPhone / Android camera to import classes into Google Calendar or Apple Calendar.
+        </p>
+
+        <div style="display:inline-block;padding:12px;background:#fff;border:1px solid #e2e8f0;border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,0.06);margin-bottom:16px;">
+          <img id="qr-image" src="" alt="Calendar Sync QR Code" style="width:200px;height:200px;display:block;">
+        </div>
+
+        <div style="display:flex;flex-direction:column;gap:8px;margin-top:8px;">
+          <button class="btn-primary" onclick="window.open('/api/export/ical')" style="width:100%;padding:10px;justify-content:center;">
+            📥 Download .ics Calendar File
+          </button>
+          <button class="btn-secondary" onclick="copyCalendarLink()" style="width:100%;padding:10px;justify-content:center;">
+            📋 Copy Calendar Subscription Link
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- AI COPILOT FLOATING DRAWER -->
+    <button class="copilot-launcher" onclick="toggleCopilot()">
+      <span>🤖</span> AI Timetable Copilot
+    </button>
+
+    <div id="copilot-drawer" class="copilot-drawer">
+      <div class="copilot-header">
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span style="font-size:16px;">🤖</span>
+          <div>
+            <div style="font-size:13px;font-weight:700;">AI Timetable Copilot</div>
+            <div style="font-size:10px;color:#94a3b8;">Natural Language Scheduling Assistant</div>
+          </div>
+        </div>
+        <button onclick="toggleCopilot()" style="background:none;border:none;color:#fff;font-size:16px;cursor:pointer;">✕</button>
+      </div>
+
+      <div class="copilot-body" id="copilot-messages">
+        <div class="copilot-msg bot">
+          👋 Hello! I am your <strong>AI Timetable Copilot</strong>. Ask me anything about faculty workloads, room availability, or what-if contingencies!
+          <div class="copilot-chips">
+            <span class="copilot-chip" onclick="askCopilot('Who has the highest workload?')">⚡ Busiest Faculty</span>
+            <span class="copilot-chip" onclick="askCopilot('Is Dr. Alan Turing free on Friday?')">🔍 Dr. Turing Availability</span>
+            <span class="copilot-chip" onclick="askCopilot('Which rooms have the highest utilization?')">🏢 Room Usage</span>
+            <span class="copilot-chip" onclick="askCopilot('Show me the quality radar score')">🎯 Quality Radar</span>
+            <span class="copilot-chip" onclick="askCopilot('What happens if Room 101 closes?')">🚨 What-If Simulation</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="copilot-footer">
+        <input type="text" id="copilot-input" class="copilot-input" placeholder="Ask about schedules, rooms, or workloads..." onkeydown="if(event.key==='Enter') sendCopilotQuery()">
+        <button class="copilot-send-btn" onclick="sendCopilotQuery()">Send</button>
+      </div>
+    </div>
+
     <!-- EXPLAINABILITY MODAL -->
     <div id="explain-modal" class="modal-backdrop" onclick="closeModalOnBackdrop(event)">
       <div class="modal-dialog" onclick="event.stopPropagation()">
@@ -1026,13 +1419,23 @@
       document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active'));
       document.querySelectorAll('.panel').forEach(el => el.classList.remove('active'));
 
-      event.currentTarget.classList.add('active');
-      document.getElementById('panel-' + tabId).classList.add('active');
+      if (window.event && window.event.currentTarget && window.event.currentTarget.classList) {
+        window.event.currentTarget.classList.add('active');
+      } else {
+        const tabEl = document.querySelector(`.nav-list li[onclick*="'${tabId}'"]`);
+        if (tabEl) tabEl.classList.add('active');
+      }
+      const p = document.getElementById('panel-' + tabId);
+      if (p) p.classList.add('active');
 
       if (tabId === 'graph') {
         renderConflictGraph();
       } else if (tabId === 'fairness') {
         loadFairnessAudit();
+      } else if (tabId === 'stepper') {
+        initStepper();
+      } else if (tabId === 'quality') {
+        loadQualityRadar();
       }
     }
 
@@ -1066,6 +1469,16 @@
       const fType = document.getElementById('filter-type').value;
       const targetSelect = document.getElementById('filter-target');
       targetSelect.innerHTML = '';
+
+      if (fType === 'all') {
+        const opt = document.createElement('option');
+        opt.value = 'all';
+        opt.innerText = 'All University Cohorts & Facilities (Master View)';
+        targetSelect.appendChild(opt);
+        targetSelect.disabled = true;
+        return;
+      }
+      targetSelect.disabled = false;
 
       if (fType === 'batch') {
         APP_STATE.batches.forEach(b => {
@@ -1107,8 +1520,29 @@
       html += '</tr></thead><tbody>';
 
       days.forEach(day => {
-        html += `<tr><td>${day}</td>`;
+        html += `<tr><td><b>${day}</b></td>`;
         for (let sIdx = 0; sIdx < numSlots; sIdx++) {
+          if (fType === 'all') {
+            const matches = APP_STATE.schedule.filter(e => e.day === day && e.occupied_slots.includes(sIdx));
+            if (matches.length > 0) {
+              html += `<td><div style="display:flex;flex-direction:column;gap:4px;">`;
+              matches.forEach(m => {
+                const isLab = m.session_type === 'LAB';
+                const chipClass = isLab ? 'session-card lab' : 'session-card';
+                html += `
+                  <div class="${chipClass}" style="cursor:pointer;padding:4px 6px;margin-bottom:0;" onclick="openExplainModal('${m.variable_id}')" title="${m.course_code} - ${m.faculty_name}">
+                    <div style="font-weight:700;font-size:11px;">${m.course_code} (${m.batch_id})</div>
+                    <div style="font-size:10px;color:#555;">${m.room_id} • ${m.faculty_name.split(' ').slice(-1)[0]}</div>
+                  </div>
+                `;
+              });
+              html += `</div></td>`;
+            } else {
+              html += `<td style="color:#a3a3a3;text-align:center;">—</td>`;
+            }
+            continue;
+          }
+
           let matching = null;
           APP_STATE.schedule.forEach(entry => {
             if (entry.day === day && entry.occupied_slots.includes(sIdx)) {
@@ -1135,6 +1569,12 @@
             html += `<td style="color:#a3a3a3;text-align:center;">—</td>`;
           }
         }
+        html += '</tr>';
+      });
+
+      html += '</tbody>';
+      table.innerHTML = html;
+    }
         html += '</tr>';
       });
 
@@ -1533,6 +1973,362 @@
       if (e.target.id === 'explain-modal') {
         closeExplainModal();
       }
+      if (e.target.id === 'qr-modal') {
+        closeQrModal();
+      }
+    }
+
+    /* ==========================================================================
+       Mobile Calendar Sync & QR Code
+       ========================================================================== */
+    function openQrModal() {
+      const fType = document.getElementById('filter-type').value;
+      const targetSelect = document.getElementById('filter-target');
+      const targetText = targetSelect.options[targetSelect.selectedIndex]?.text || 'University Schedule';
+      
+      const sub = document.getElementById('qr-subtitle');
+      sub.innerText = `Scan to sync ${targetText} directly into your iOS / Android calendar.`;
+      
+      const calUrl = window.location.origin + '/api/export/ical';
+      const qrImg = document.getElementById('qr-image');
+      qrImg.src = `https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=${encodeURIComponent(calUrl)}`;
+      
+      document.getElementById('qr-modal').style.display = 'flex';
+    }
+
+    function closeQrModal() {
+      document.getElementById('qr-modal').style.display = 'none';
+    }
+
+    function copyCalendarLink() {
+      const calUrl = window.location.origin + '/api/export/ical';
+      navigator.clipboard.writeText(calUrl).then(() => {
+        showToast('📋 Calendar link copied to clipboard!');
+      }).catch(() => {
+        showToast('Link: ' + calUrl);
+      });
+    }
+
+    /* ==========================================================================
+       AI Timetable Copilot Controller
+       ========================================================================== */
+    function toggleCopilot() {
+      const drawer = document.getElementById('copilot-drawer');
+      drawer.classList.toggle('open');
+      if (drawer.classList.contains('open')) {
+        document.getElementById('copilot-input').focus();
+      }
+    }
+
+    function askCopilot(queryText) {
+      document.getElementById('copilot-input').value = queryText;
+      sendCopilotQuery();
+    }
+
+    async function sendCopilotQuery() {
+      const input = document.getElementById('copilot-input');
+      const query = input.value.trim();
+      if (!query) return;
+
+      const msgBox = document.getElementById('copilot-messages');
+      // Append user msg
+      msgBox.innerHTML += `<div class="copilot-msg user">${escapeHtml(query)}</div>`;
+      input.value = '';
+      msgBox.scrollTop = msgBox.scrollHeight;
+
+      // Typing indicator
+      const typingId = 'typing-' + Date.now();
+      msgBox.innerHTML += `<div class="copilot-msg bot" id="${typingId}">Thinking... 🧠</div>`;
+      msgBox.scrollTop = msgBox.scrollHeight;
+
+      try {
+        const res = await fetch('/api/copilot', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ query: query })
+        });
+        const data = await res.json();
+        
+        const typingEl = document.getElementById(typingId);
+        if (typingEl) typingEl.remove();
+
+        // Convert simple markdown bold/bullets to HTML
+        let formattedReply = escapeHtml(data.reply)
+          .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+          .replace(/\*(.*?)\*/g, '<em>$1</em>')
+          .replace(/\n\n/g, '<br/><br/>')
+          .replace(/\n- /g, '<br/>• ');
+
+        let actionsHtml = '';
+        if (data.actions && data.actions.length > 0) {
+          actionsHtml = '<div class="copilot-chips" style="margin-top:10px;">';
+          data.actions.forEach(act => {
+            if (act.tab) {
+              actionsHtml += `<span class="copilot-chip" onclick="switchTab('${act.tab}'); toggleCopilot();">👉 ${act.label}</span>`;
+            } else if (act.query) {
+              actionsHtml += `<span class="copilot-chip" onclick="askCopilot('${act.query}')">💬 ${act.label}</span>`;
+            } else if (act.filter_type) {
+              actionsHtml += `<span class="copilot-chip" onclick="applyCopilotFilter('${act.filter_type}', '${act.filter_val}')">🔍 ${act.label}</span>`;
+            }
+          });
+          actionsHtml += '</div>';
+        }
+
+        msgBox.innerHTML += `
+          <div class="copilot-msg bot">
+            <div style="font-weight:700;font-size:11px;color:#2563eb;text-transform:uppercase;margin-bottom:4px;">${data.title || 'Copilot Response'}</div>
+            <div>${formattedReply}</div>
+            ${actionsHtml}
+          </div>
+        `;
+        msgBox.scrollTop = msgBox.scrollHeight;
+      } catch (err) {
+        const typingEl = document.getElementById(typingId);
+        if (typingEl) typingEl.remove();
+        msgBox.innerHTML += `<div class="copilot-msg bot" style="color:#b91c1c;">⚠️ Error consulting copilot: ${err}</div>`;
+        msgBox.scrollTop = msgBox.scrollHeight;
+      }
+    }
+
+    function applyCopilotFilter(fType, fVal) {
+      switchTab('explorer');
+      const typeSelect = document.getElementById('filter-type');
+      typeSelect.value = fType;
+      updateFilterDropdown();
+      const targetSelect = document.getElementById('filter-target');
+      targetSelect.value = fVal;
+      renderTimetableGrid();
+      toggleCopilot();
+      showToast(`Filtered schedule by ${fType}: ${fVal}`);
+    }
+
+    function escapeHtml(text) {
+      const map = { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;' };
+      return text.replace(/[&<>"']/g, m => map[m]);
+    }
+
+    /* ==========================================================================
+       Multi-Objective Quality Radar Controller
+       ========================================================================== */
+    async function loadQualityRadar() {
+      try {
+        const res = await fetch('/api/quality/radar');
+        const data = await res.json();
+
+        document.getElementById('radar-grade').innerText = data.grade.split(' ')[0];
+        document.getElementById('radar-score-pill').innerText = `Overall Score: ${data.overall_score} / 100 (${data.grade})`;
+
+        const rMetrics = data.radar_metrics;
+        document.getElementById('qm-integrity').innerText = `${rMetrics[0].score}%`;
+        document.getElementById('qm-fairness').innerText = `${rMetrics[1].score}%`;
+        document.getElementById('qm-compactness').innerText = `${rMetrics[2].score}%`;
+        document.getElementById('qm-room').innerText = `${rMetrics[3].score}%`;
+        document.getElementById('qm-time').innerText = `${rMetrics[4].score}%`;
+
+        // Render Plotly Radar Chart
+        const categories = rMetrics.map(m => m.subject);
+        const scores = rMetrics.map(m => m.score);
+        categories.push(categories[0]); // Close polygon
+        scores.push(scores[0]);
+
+        const trace = {
+          type: 'scatterpolar',
+          r: scores,
+          theta: categories,
+          fill: 'toself',
+          fillcolor: 'rgba(37, 99, 235, 0.22)',
+          line: { color: '#2563eb', width: 2.5 },
+          marker: { color: '#1d4ed8', size: 6 },
+          name: 'Schedule Quality'
+        };
+
+        const layout = {
+          polar: {
+            radialaxis: {
+              visible: true,
+              range: [0, 100],
+              tickfont: { size: 10, color: '#64748b' }
+            },
+            angularaxis: {
+              tickfont: { size: 11, color: '#1e293b', weight: 'bold' }
+            }
+          },
+          showlegend: false,
+          margin: { t: 30, b: 30, l: 45, r: 45 },
+          paper_bgcolor: 'transparent'
+        };
+
+        Plotly.newPlot('quality-radar-chart', [trace], layout, { responsive: true, displayModeBar: false });
+
+        // Insights list
+        const insList = document.getElementById('radar-insights-list');
+        insList.innerHTML = data.insights.map(ins => `
+          <div style="background:#f8fafc;border-left:4px solid #2563eb;padding:10px 14px;border-radius:6px;font-size:12.5px;color:#1e293b;box-shadow:0 1px 3px rgba(0,0,0,0.04);">
+            ${ins}
+          </div>
+        `).join('');
+
+      } catch (e) {
+        showToast('Failed to load quality radar: ' + e);
+      }
+    }
+
+    /* ==========================================================================
+       CSP Search Tree Stepper Controller
+       ========================================================================== */
+    let STEPPER_STEPS = [];
+    let STEPPER_INDEX = 0;
+    let STEPPER_INTERVAL = null;
+
+    async function initStepper() {
+      if (STEPPER_STEPS.length > 0) return;
+      try {
+        const res = await fetch('/api/search-trace');
+        const data = await res.json();
+        STEPPER_STEPS = data.steps || [];
+
+        const slider = document.getElementById('stepper-slider');
+        slider.max = Math.max(0, STEPPER_STEPS.length - 1);
+        slider.value = 0;
+        STEPPER_INDEX = 0;
+        renderStepperStep(0);
+        populateStepperLogTable();
+      } catch (e) {
+        showToast('Failed to load search trace: ' + e);
+      }
+    }
+
+    function renderStepperStep(idx) {
+      if (!STEPPER_STEPS || STEPPER_STEPS.length === 0) return;
+      STEPPER_INDEX = Math.max(0, Math.min(idx, STEPPER_STEPS.length - 1));
+
+      const step = STEPPER_STEPS[STEPPER_INDEX];
+      document.getElementById('stepper-slider').value = STEPPER_INDEX;
+      document.getElementById('stepper-counter').innerText = `Step ${STEPPER_INDEX + 1}/${STEPPER_STEPS.length}`;
+
+      const actionEl = document.getElementById('stepper-action');
+      const actionBadge = document.getElementById('stepper-action-badge');
+      const varEl = document.getElementById('stepper-var');
+      const varSub = document.getElementById('stepper-var-sub');
+      const slotEl = document.getElementById('stepper-slot');
+      const domainBadge = document.getElementById('stepper-domain-badge');
+      const reasonEl = document.getElementById('stepper-reason');
+
+      const slotDesc = step.day ? `${step.day} Slot ${step.slot + 1} (${step.room_id})` : 'Variable Selection';
+      actionEl.innerText = step.action || 'Search Step';
+      varEl.innerText = step.course_code ? `${step.course_code} (${step.batch_id})` : (step.variable_id || '—');
+      varSub.innerText = `Assigned ${step.assigned_count}/${step.total_variables} Variables`;
+
+      if (step.action === 'BACKTRACK') {
+        actionBadge.className = 'badge-backtrack';
+        actionBadge.innerText = '🚨 Conflict Backtrack';
+        slotEl.innerText = 'Rolling Back';
+        domainBadge.innerText = 'Domain Wipeout';
+        reasonEl.innerHTML = `<span style="color:#b91c1c;font-weight:700;">Backtracking triggered:</span> ${step.detail || 'No consistent slot assignments remained. Reverting state.'}`;
+      } else if (step.action === 'SELECT_VAR') {
+        actionBadge.className = 'badge-assign';
+        actionBadge.style.background = '#eff6ff';
+        actionBadge.style.color = '#1d4ed8';
+        actionBadge.innerText = '🎯 MRV Select';
+        slotEl.innerText = 'Choosing Best Value';
+        domainBadge.innerText = 'Evaluating Domains';
+        reasonEl.innerHTML = step.detail;
+      } else {
+        actionBadge.className = 'badge-assign';
+        actionBadge.style.background = '#f0fdf4';
+        actionBadge.style.color = '#15803d';
+        actionBadge.innerText = '✅ ' + (step.action === 'FORWARD_CHECK' ? 'Forward Check' : 'Try Assign');
+        slotEl.innerText = slotDesc;
+        domainBadge.innerText = `${step.pruned_count || 0} Domains Pruned`;
+        reasonEl.innerHTML = step.detail;
+      }
+
+      // Highlight active row in stepper log table
+      document.querySelectorAll('#stepper-log-body tr').forEach((tr, i) => {
+        if (i === STEPPER_INDEX) {
+          tr.style.background = '#dbeafe';
+          tr.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        } else {
+          tr.style.background = 'transparent';
+        }
+      });
+    }
+
+    function populateStepperLogTable() {
+      const tbody = document.getElementById('stepper-log-body');
+      tbody.innerHTML = '';
+      STEPPER_STEPS.slice(0, 50).forEach((st, i) => {
+        const isBt = st.action === 'BACKTRACK';
+        const isSel = st.action === 'SELECT_VAR';
+        const badge = isBt ? '<span class="badge-backtrack">BACKTRACK</span>' : (isSel ? '<span style="background:#eff6ff;color:#1d4ed8;padding:2px 6px;border-radius:4px;font-size:10px;font-weight:700;">SELECT</span>' : '<span class="badge-assign">ASSIGN</span>');
+        const slotText = st.day ? `${st.day} S${st.slot+1} (${st.room_id})` : '—';
+        tbody.innerHTML += `
+          <tr onclick="renderStepperStep(${i})" style="cursor:pointer;">
+            <td><b>#${i+1}</b></td>
+            <td>${badge}</td>
+            <td>${st.course_code || st.variable_id || '—'}</td>
+            <td>${slotText}</td>
+            <td style="font-size:11.5px;color:#555;">${st.detail.replace(/<[^>]*>/g, '')}</td>
+          </tr>
+        `;
+      });
+    }
+        const badge = isBt ? '<span class="badge-backtrack">BACKTRACK</span>' : '<span class="badge-assign">ASSIGN</span>';
+        tbody.innerHTML += `
+          <tr onclick="renderStepperStep(${i})" style="cursor:pointer;">
+            <td><b>#${i+1}</b></td>
+            <td>${badge}</td>
+            <td>${st.course_code || st.variable_id || '—'}</td>
+            <td>${st.assigned_slot || '—'}</td>
+            <td style="font-size:11.5px;color:#555;">${st.details || st.heuristic_info || 'Consistent'}</td>
+          </tr>
+        `;
+      });
+    }
+
+    function stepperNext() {
+      if (STEPPER_INDEX < STEPPER_STEPS.length - 1) {
+        renderStepperStep(STEPPER_INDEX + 1);
+      } else {
+        stopStepperPlay();
+      }
+    }
+
+    function stepperPrev() {
+      if (STEPPER_INDEX > 0) {
+        renderStepperStep(STEPPER_INDEX - 1);
+      }
+    }
+
+    function stepperScrub(val) {
+      renderStepperStep(parseInt(val, 10));
+    }
+
+    function stepperJumpStart() {
+      renderStepperStep(0);
+    }
+
+    function stepperJumpEnd() {
+      renderStepperStep(STEPPER_STEPS.length - 1);
+    }
+
+    function toggleStepperPlay() {
+      if (STEPPER_INTERVAL) {
+        stopStepperPlay();
+      } else {
+        document.getElementById('stepper-play-btn').innerText = '⏸️ Pause';
+        STEPPER_INTERVAL = setInterval(() => {
+          stepperNext();
+        }, 650);
+      }
+    }
+
+    function stopStepperPlay() {
+      if (STEPPER_INTERVAL) {
+        clearInterval(STEPPER_INTERVAL);
+        STEPPER_INTERVAL = null;
+        document.getElementById('stepper-play-btn').innerText = '▶️ Auto Play';
+      }
     }
 
     /* ==========================================================================
@@ -1588,28 +2384,44 @@
         action: '⚔️ <b>When you click this tab:</b> Click "Run Benchmark Battle" to watch Backtracking, Local Search, and Google OR-Tools compete on runtime (ms) and states explored.'
       },
       {
-        target: '.nav-list li:nth-child(3)',
+        target: '.nav-list li:nth-child(4)',
         tab: 'fairness',
-        badge: 'Step 7 of 9 • Responsible AI & Fairness',
+        badge: 'Step 7 of 11 • Responsible AI',
         title: '⚖️ Responsible AI & Faculty Workload Fairness',
         text: 'Mandatory Rubric Component 5: Computes the <b>Gini Coefficient</b> of teaching hours across professors to guarantee workload fairness, and audits student cohort fatigue.',
         action: '🛡️ <b>When you click this tab:</b> Inspect teaching load equity charts, morning vs afternoon balance, and ethical AI failure modes.'
       },
       {
-        target: '.nav-list li:nth-child(4)',
-        tab: 'rescheduler',
-        badge: 'Step 8 of 9 • Emergency Simulator',
-        title: '🚨 Emergency "What-If" Rescheduler',
-        text: 'Simulates sudden unexpected disruptions in university operations, such as a professor falling sick or a classroom closing for AC repairs.',
-        action: '🔄 <b>When you click this tab:</b> Choose an absent teacher or room and watch the AI dynamically reroute classes with minimal disruption to the rest of the campus.'
+        target: '.nav-list li:nth-child(5)',
+        tab: 'stepper',
+        badge: 'Step 8 of 11 • Search Stepper',
+        title: '🎬 CSP Search Tree & Propagation Stepper',
+        text: 'Step under the hood to see the Backtracking search tree in action. Watch <b>MRV (Minimum Remaining Values)</b> select variables, <b>Forward Checking</b> prune domains, and <b>Backtracks</b> recover from dead ends.',
+        action: '▶️ <b>When you click this tab:</b> Press Auto Play or scrub through the search steps to see how the algorithm finds a solution!'
       },
       {
-        target: '.nav-list li:nth-child(5)',
-        tab: 'graph',
-        badge: 'Step 9 of 9 • Graph Theory',
-        title: '🕸️ Conflict Topology Graph (Graph Coloring)',
-        text: 'Visualizes the timetable as a NetworkX graph where nodes are courses, connecting lines represent clashes, and colors represent clash-free time slots.',
-        action: '🎨 <b>When you click this tab:</b> Inspect how graph coloring theory solves academic timetabling!'
+        target: '.nav-list li:nth-child(6)',
+        tab: 'quality',
+        badge: 'Step 9 of 11 • Quality Radar',
+        title: '🎯 Multi-Objective Quality Radar',
+        text: 'A 5-dimensional holistic spider chart evaluating constraint integrity, faculty equity, student spacing, room efficiency, and time distribution.',
+        action: '🕸️ <b>When you click this tab:</b> View the interactive Plotly radar chart and system optimization recommendations.'
+      },
+      {
+        target: '.copilot-launcher',
+        tab: 'explorer',
+        badge: 'Step 10 of 11 • AI Copilot',
+        title: '🤖 Conversational AI Timetable Copilot',
+        text: 'Ask plain English questions like <i>"Who has the highest workload?"</i>, <i>"Is Dr. Turing free on Friday?"</i>, or <i>"Check Room 101 usage"</i>.',
+        action: '💬 <b>Try it anytime:</b> Click the floating AI Copilot button at the bottom-right to chat with your intelligent schedule assistant.'
+      },
+      {
+        target: '.nav-list li:nth-child(7)',
+        tab: 'rescheduler',
+        badge: 'Step 11 of 11 • Emergency Rescheduler',
+        title: '🚨 Emergency "What-If" Rescheduler',
+        text: 'Simulates sudden unexpected disruptions in university operations, such as a professor falling sick or a classroom closing for repairs.',
+        action: '🔄 <b>When you click this tab:</b> Choose an absent teacher or room and watch the AI dynamically reroute classes with minimal disruption to the rest of the campus.'
       }
     ];
 

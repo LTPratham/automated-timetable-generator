@@ -30,6 +30,7 @@ from src.analytics.conflict_graph import build_conflict_graph
 from src.analytics.rescheduler import WhatIfRescheduler
 from src.analytics.explainability import generate_session_explanation
 from src.analytics.fairness import audit_fairness_and_ethics
+from src.analytics.copilot import process_copilot_query, compute_quality_radar
 from src.exporter.excel_export import export_timetable_to_excel
 from src.exporter.pdf_export import export_timetable_to_pdf
 from src.exporter.ical_export import export_timetable_to_ics
@@ -63,6 +64,10 @@ _solve_initial()
 # --- REQUEST & RESPONSE SCHEMAS ---
 class SolveRequest(BaseModel):
     algorithm: str = "backtracking_fc"  # "backtracking_fc", "backtracking_none", "ortools", "min_conflicts"
+
+
+class CopilotQueryRequest(BaseModel):
+    query: str
 
 
 class FacultyLeaveRequest(BaseModel):
@@ -421,6 +426,26 @@ def reset_custom_dataset():
     STATE["dataset"] = create_sample_cs_department()
     _solve_initial()
     return {"success": True, "message": "Department dataset reset to default benchmark."}
+
+
+@app.post("/api/copilot")
+def copilot_query(req: CopilotQueryRequest):
+    """Processes natural language scheduling queries via AI Copilot."""
+    dataset: DepartmentDataset = STATE["dataset"]
+    schedule = STATE["current_schedule"]
+    if not schedule:
+        raise HTTPException(status_code=400, detail="No active schedule available.")
+    return process_copilot_query(req.query, dataset, schedule)
+
+
+@app.get("/api/quality/radar")
+def get_quality_radar():
+    """Calculates 5-dimensional holistic timetable quality score and radar chart data."""
+    dataset: DepartmentDataset = STATE["dataset"]
+    schedule = STATE["current_schedule"]
+    if not schedule:
+        raise HTTPException(status_code=400, detail="No active schedule available.")
+    return compute_quality_radar(dataset, schedule)
 
 
 # --- EXPORT ENDPOINTS ---
