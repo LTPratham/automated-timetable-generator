@@ -280,7 +280,7 @@ def process_copilot_query(
                 "The platform includes a dedicated **Real-Time What-If Contingency Simulator**:\n\n"
                 "1. **Faculty Sudden Sick Leave**: Automatically shifts their lectures without affecting others.\n"
                 "2. **Classroom Emergency Closure**: Reroutes sessions to vacant rooms matching capacity.\n\n"
-                "You can test this right now using the **'⚡ Campus Crisis Simulator'** panel."
+                "You can test this right now using the **'Campus Crisis Simulator'** panel."
             ),
             "actions": [
                 {"label": "Open Crisis Simulator", "modal": "crisis"}

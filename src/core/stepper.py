@@ -55,7 +55,7 @@ def generate_search_execution_trace(
 
     def backtrack_recursive(current_domains: Dict[SessionVariable, List[SlotAssignment]]) -> bool:
         if len(assignment) == len(csp.variables):
-            log_step("SUCCESS", None, None, f"🎉 All {len(csp.variables)} sessions successfully placed with 0 conflicts!")
+            log_step("SUCCESS", None, None, f" All {len(csp.variables)} sessions successfully placed with 0 conflicts!")
             return True
 
         if len(trace) >= max_steps:
@@ -69,7 +69,7 @@ def generate_search_execution_trace(
             "SELECT_VAR",
             var,
             None,
-            f"🧠 <b>MRV Heuristic</b> prioritized <b>{var.course_code}</b> ({var.batch_id}, Prof. {fac_name}) with {remaining_domain_len} remaining valid slot(s)."
+            f"<b>MRV Heuristic</b> prioritized <b>{var.course_code}</b> ({var.batch_id}, Prof. {fac_name}) with {remaining_domain_len} remaining valid slot(s)."
         )
 
         for val in list(current_domains[var]):
@@ -95,7 +95,7 @@ def generate_search_execution_trace(
                             "FORWARD_CHECK",
                             var,
                             val,
-                            f"⚡ <b>Forward Checking</b> eliminated {pruned_count} clashing slot-room option(s) from neighboring courses.",
+                            f"<b>Forward Checking</b> eliminated {pruned_count} clashing slot-room option(s) from neighboring courses.",
                             pruned_count=pruned_count,
                         )
 
@@ -108,7 +108,7 @@ def generate_search_execution_trace(
                     "BACKTRACK",
                     var,
                     val,
-                    f"🔙 <b>Backtrack!</b> Dead-end reached after {var.course_code} at Slot {val.start_slot_index}. Pruning branches and rolling back."
+                    f" <b>Backtrack!</b> Dead-end reached after {var.course_code} at Slot {val.start_slot_index}. Pruning branches and rolling back."
                 )
 
         return False

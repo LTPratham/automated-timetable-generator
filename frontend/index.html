@@ -794,29 +794,29 @@
   <!-- SIDEBAR -->
   <aside class="sidebar">
     <div class="brand-badge">
-      📅 Timetable Intelligence
+      Timetable Intelligence
     </div>
     <div class="sidebar-title">CSP Solver Platform</div>
     <div class="sidebar-caption">Deterministic AI Constraint Engine</div>
 
     <ul class="nav-list">
-      <li class="nav-item" style="background:#f3f4f6;color:#111;font-weight:600;" onclick="window.location.href='/landing.html'">🏠 Project Showcase (Landing)</li>
-      <li class="nav-item active" onclick="switchTab('explorer')">📊 Timetable Explorer</li>
-      <li class="nav-item" onclick="switchTab('benchmark')">⚡ Algorithm Arena</li>
-      <li class="nav-item" onclick="switchTab('fairness')">⚖️ Responsible AI & Fairness</li>
-      <li class="nav-item" onclick="switchTab('stepper')">🎬 CSP Search Stepper</li>
-      <li class="nav-item" onclick="switchTab('quality')">🎯 Quality Radar</li>
-      <li class="nav-item" onclick="switchTab('rescheduler')">🚨 'What-If' Rescheduler</li>
-      <li class="nav-item" onclick="switchTab('graph')">🕸️ Conflict Topology</li>
-      <li class="nav-item" onclick="switchTab('data')">⚙️ Academic Registry</li>
+      <li class="nav-item" style="background:#f3f4f6;color:#111;font-weight:600;" onclick="window.location.href='/landing.html'">Project Showcase (Landing)</li>
+      <li class="nav-item active" onclick="switchTab('explorer')">Timetable Explorer</li>
+      <li class="nav-item" onclick="switchTab('benchmark')">Algorithm Arena</li>
+      <li class="nav-item" onclick="switchTab('fairness')">Responsible AI & Fairness</li>
+      <li class="nav-item" onclick="switchTab('stepper')">CSP Search Stepper</li>
+      <li class="nav-item" onclick="switchTab('quality')">Quality Radar</li>
+      <li class="nav-item" onclick="switchTab('rescheduler')">'What-If' Rescheduler</li>
+      <li class="nav-item" onclick="switchTab('graph')">Conflict Topology</li>
+      <li class="nav-item" onclick="switchTab('data')">Academic Registry</li>
     </ul>
 
     <button class="btn-primary" onclick="startTour(true)" style="width:100%;margin-bottom:14px;padding:9px;font-size:11.5px;display:flex;align-items:center;justify-content:center;gap:6px;cursor:pointer;background:#111;color:#fff;">
-      <span>✨</span> Start Interactive Guide
+      Start Interactive Guide
     </button>
 
     <div class="api-badge-card">
-      <b>💡 Local Symbolic AI</b><br/>
+      <b>Local Symbolic AI</b><br/>
       Pure algorithmic search (MRV/LCV, AC-3, OR-Tools). Zero external API keys needed.<br/><br/>
       API Documentation: <a href="/docs" target="_blank">Swagger /docs</a>
     </div>
@@ -833,16 +833,16 @@
       </div>
       <div style="display:flex;gap:10px;align-items:center;">
         <button class="btn-secondary" onclick="openQrModal()" style="display:flex;align-items:center;gap:6px;padding:9px 14px;border-radius:6px;font-size:12px;background:#fff;cursor:pointer;">
-          <span>📱</span> Mobile QR Sync
+          Mobile QR Sync
         </button>
         <button class="btn-secondary" onclick="window.location.href='/landing.html'" style="display:flex;align-items:center;gap:6px;padding:9px 14px;border-radius:6px;font-size:12px;background:#fff;cursor:pointer;">
-          <span>🏠</span> Project Showcase
+          Project Showcase
         </button>
         <button class="btn-primary" onclick="toggleCopilot()" style="display:flex;align-items:center;gap:6px;padding:9px 14px;border-radius:6px;font-size:12px;background:#2563eb;color:#fff;cursor:pointer;border:none;">
-          <span>🤖</span> AI Copilot
+          AI Copilot
         </button>
         <button class="btn-primary" onclick="startTour(true)" style="display:flex;align-items:center;gap:6px;padding:9px 16px;border-radius:6px;font-size:12px;background:#111;color:#fff;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,0.12);">
-          <span>✨</span> Interactive Website Guide
+          Interactive Website Guide
         </button>
       </div>
     </div>
@@ -890,13 +890,13 @@
           <option value="min_conflicts">Min-Conflicts Local Search</option>
           <option value="backtracking_none">Backtracking (No Inference)</option>
         </select>
-        <button class="btn-primary" onclick="solveSchedule()">🚀 Re-compute Schedule</button>
+        <button class="btn-primary" onclick="solveSchedule()">Re-compute Schedule</button>
       </div>
 
       <div class="export-group">
-        <button class="btn-secondary" onclick="window.open('/api/export/excel')">📊 Excel (.xlsx)</button>
-        <button class="btn-secondary" onclick="window.open('/api/export/pdf')">📄 Notice PDF (.pdf)</button>
-        <button class="btn-secondary" onclick="window.open('/api/export/ical')">📅 iCal (.ics)</button>
+        <button class="btn-secondary" onclick="window.open('/api/export/excel')">Excel (.xlsx)</button>
+        <button class="btn-secondary" onclick="window.open('/api/export/pdf')">Notice PDF (.pdf)</button>
+        <button class="btn-secondary" onclick="window.open('/api/export/ical')">iCal (.ics)</button>
       </div>
     </div>
 
@@ -908,14 +908,14 @@
           <div style="display:flex;gap:12px;align-items:center;">
             <span style="font-weight:600;font-size:12px;">Filter By:</span>
             <select id="filter-type" onchange="updateFilterDropdown()">
-              <option value="all">🏫 Master University Grid (All Cohorts)</option>
+              <option value="all">Master University Grid (All Cohorts)</option>
               <option value="batch" selected>Student Cohort</option>
               <option value="faculty">Faculty Member</option>
               <option value="room">Physical Facility / Room</option>
             </select>
             <select id="filter-target" onchange="renderTimetableGrid()"></select>
             <button class="btn-secondary" onclick="openQrModal()" style="font-size:11.5px;padding:6px 12px;cursor:pointer;display:flex;align-items:center;gap:4px;">
-              <span>📱</span> QR Sync
+              QR Sync
             </button>
           </div>
         </div>
@@ -933,7 +933,7 @@
       <div class="view-card">
         <div class="panel-header">
           <h2>Algorithm Arena (Head-to-Head Performance)</h2>
-          <button class="btn-primary" onclick="runBenchmarkBattle()">⚔️ Run Benchmark Battle</button>
+          <button class="btn-primary" onclick="runBenchmarkBattle()">Run Benchmark Battle</button>
         </div>
         <p style="color:var(--color-text-primary);margin-bottom:16px;">
           Comparing deterministic CSP Backtracking (+MRV/FC), Local Search (Min-Conflicts), and Google OR-Tools CP-SAT.
@@ -973,7 +973,7 @@
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;">
           <!-- Scenario 1: Faculty Leave -->
           <div style="border:1px solid var(--color-border-muted);padding:20px;border-radius:6px;background:var(--color-surface-strong);">
-            <h3 style="font-size:14px;margin-bottom:12px;">👨‍🏫 Scenario A: Sudden Faculty Absence</h3>
+            <h3 style="font-size:14px;margin-bottom:12px;">Scenario A: Sudden Faculty Absence</h3>
             <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:16px;">
               <label style="font-size:11px;font-weight:600;">Absent Professor:</label>
               <select id="reschedule-faculty"></select>
@@ -992,7 +992,7 @@
 
           <!-- Scenario 2: Room Closure -->
           <div style="border:1px solid var(--color-border-muted);padding:20px;border-radius:6px;background:var(--color-surface-strong);">
-            <h3 style="font-size:14px;margin-bottom:12px;">🏢 Scenario B: Room Repairs / Maintenance</h3>
+            <h3 style="font-size:14px;margin-bottom:12px;">Scenario B: Room Repairs / Maintenance</h3>
             <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:16px;">
               <label style="font-size:11px;font-weight:600;">Closed Room / Lab:</label>
               <select id="reschedule-room"></select>
@@ -1011,7 +1011,7 @@
         </div>
 
         <div id="reschedule-results" style="margin-top:24px;display:none;">
-          <h3 style="font-size:14px;margin-bottom:10px;">📋 Rescheduling Impact Report:</h3>
+          <h3 style="font-size:14px;margin-bottom:10px;">Rescheduling Impact Report:</h3>
           <div id="reschedule-details" style="font-size:12px;line-height:22px;background:#fff;border:1px solid var(--color-border-muted);padding:16px;border-radius:6px;"></div>
         </div>
       </div>
@@ -1039,7 +1039,7 @@
         </div>
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;">
           <div>
-            <h3 style="font-size:13px;margin-bottom:10px;">👨‍🏫 Faculty Roster</h3>
+            <h3 style="font-size:13px;margin-bottom:10px;">Faculty Roster</h3>
             <table class="data-table" id="data-faculty-table">
               <thead><tr><th>ID</th><th>Name</th><th>Dept</th><th>Max Hrs/Day</th></tr></thead>
               <tbody></tbody>
@@ -1047,7 +1047,7 @@
           </div>
 
           <div>
-            <h3 style="font-size:13px;margin-bottom:10px;">🏢 Physical Facilities & Labs</h3>
+            <h3 style="font-size:13px;margin-bottom:10px;">Physical Facilities & Labs</h3>
             <table class="data-table" id="data-rooms-table">
               <thead><tr><th>ID</th><th>Name</th><th>Type</th><th>Capacity</th></tr></thead>
               <tbody></tbody>
@@ -1091,7 +1091,7 @@
 
         <!-- Faculty Workload Chart & Table -->
         <div style="margin-bottom:28px;">
-          <h3 style="font-size:14px;margin-bottom:12px;">👨‍🏫 Faculty Workload & Utilization Audit</h3>
+          <h3 style="font-size:14px;margin-bottom:12px;">Faculty Workload & Utilization Audit</h3>
           <div id="fairness-fac-chart" style="height:320px;margin-bottom:16px;"></div>
           <table class="data-table" id="fairness-faculty-table">
             <thead>
@@ -1110,7 +1110,7 @@
 
         <!-- Student Fatigue Balance Chart & Table -->
         <div style="margin-bottom:28px;">
-          <h3 style="font-size:14px;margin-bottom:12px;">🎓 Student Cohort Cognitive Spacing (Morning vs Afternoon Balance)</h3>
+          <h3 style="font-size:14px;margin-bottom:12px;">Student Cohort Cognitive Spacing (Morning vs Afternoon Balance)</h3>
           <div id="fairness-batch-chart" style="height:300px;margin-bottom:16px;"></div>
           <table class="data-table" id="fairness-batch-table">
             <thead>
@@ -1130,7 +1130,7 @@
 
         <!-- Responsible AI & Failure Modes -->
         <div style="border-top:1px solid var(--color-border-muted);padding-top:20px;">
-          <h3 style="font-size:14px;margin-bottom:12px;">🛡️ Ethical Declarations & Known Failure Modes</h3>
+          <h3 style="font-size:14px;margin-bottom:12px;">Ethical Declarations & Known Failure Modes</h3>
           <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;">
             <div style="background:var(--color-surface-strong);padding:16px;border-radius:6px;border:1px solid var(--color-border-default);">
               <h4 style="font-size:12px;font-weight:700;margin-bottom:6px;">Algorithmic Neutrality & Bias Mitigation</h4>
@@ -1157,7 +1157,7 @@
     <div id="panel-stepper" class="panel">
       <div class="view-card">
         <div class="panel-header">
-          <h2>🎬 CSP Search Tree & Propagation Stepper</h2>
+          <h2>CSP Search Tree & Propagation Stepper</h2>
           <span style="font-size:11px;font-weight:600;padding:3px 8px;border-radius:4px;background:#eff6ff;color:#1d4ed8;border:1px solid #bfdbfe;">
             Under-The-Hood AI Execution
           </span>
@@ -1168,11 +1168,11 @@
 
         <!-- Stepper Controls Bar -->
         <div class="stepper-bar">
-          <button class="stepper-btn" onclick="stepperJumpStart()">⏮️ Start</button>
-          <button class="stepper-btn" onclick="stepperPrev()">◀️ Step Back</button>
-          <button class="stepper-btn" id="stepper-play-btn" onclick="toggleStepperPlay()">▶️ Auto Play</button>
-          <button class="stepper-btn" onclick="stepperNext()">Step Forward ▶️</button>
-          <button class="stepper-btn" onclick="stepperJumpEnd()">⏭️ End</button>
+          <button class="stepper-btn" onclick="stepperJumpStart()">Start</button>
+          <button class="stepper-btn" onclick="stepperPrev()">Step Back</button>
+          <button class="stepper-btn" id="stepper-play-btn" onclick="toggleStepperPlay()">Auto Play</button>
+          <button class="stepper-btn" onclick="stepperNext()">Step Forward</button>
+          <button class="stepper-btn" onclick="stepperJumpEnd()">End</button>
           <input type="range" id="stepper-slider" class="stepper-slider" min="0" max="0" value="0" oninput="stepperScrub(this.value)">
           <span id="stepper-counter" style="font-weight:700;font-size:12px;font-family:var(--font-family-mono);min-width:70px;text-align:right;">Step 0/0</span>
         </div>
@@ -1199,7 +1199,7 @@
         <!-- Explanation & Conflict Log -->
         <div style="background:var(--color-surface-strong);border:1px solid var(--color-border-default);border-radius:8px;padding:16px;margin-bottom:20px;">
           <h4 style="font-size:12px;font-weight:700;text-transform:uppercase;margin-bottom:6px;color:#1e293b;">
-            🧠 CSP Search Reasoning
+            CSP Search Reasoning
           </h4>
           <p id="stepper-reason" style="font-size:13px;line-height:20px;color:#334155;">
             Click <strong>Step Forward</strong> or <strong>Auto Play</strong> to visualize constraint satisfaction search steps in real-time.
@@ -1207,7 +1207,7 @@
         </div>
 
         <!-- Step Trace Log Table -->
-        <h3 style="font-size:13px;margin-bottom:10px;">📋 Execution Step Log (Recent Steps)</h3>
+        <h3 style="font-size:13px;margin-bottom:10px;">Execution Step Log (Recent Steps)</h3>
         <table class="data-table" id="stepper-log-table">
           <thead>
             <tr>
@@ -1227,8 +1227,8 @@
     <div id="panel-quality" class="panel">
       <div class="view-card">
         <div class="panel-header">
-          <h2>🎯 Multi-Objective Timetable Quality Radar</h2>
-          <button class="btn-primary" onclick="loadQualityRadar()">🔄 Refresh Metrics</button>
+          <h2>Multi-Objective Timetable Quality Radar</h2>
+          <button class="btn-primary" onclick="loadQualityRadar()">Refresh Metrics</button>
         </div>
         <p style="color:var(--color-text-primary);margin-bottom:20px;">
           Holistic 5-dimensional evaluation of timetable fitness: balancing mathematical constraint integrity, ethical faculty workloads, student cognitive ergonomics, campus energy efficiency, and time distribution.
@@ -1279,11 +1279,11 @@
         <!-- Radar Chart & Insights -->
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;">
           <div>
-            <h3 style="font-size:13px;margin-bottom:10px;">🕸️ 5-Axis Spider Radar Chart</h3>
+            <h3 style="font-size:13px;margin-bottom:10px;">5-Axis Spider Radar Chart</h3>
             <div id="quality-radar-chart" style="height:360px;background:#ffffff;border:1px solid var(--color-border-default);border-radius:8px;"></div>
           </div>
           <div>
-            <h3 style="font-size:13px;margin-bottom:10px;">💡 Optimization Insights & Key Findings</h3>
+            <h3 style="font-size:13px;margin-bottom:10px;">Optimization Insights & Key Findings</h3>
             <div id="radar-insights-list" style="display:flex;flex-direction:column;gap:10px;"></div>
           </div>
         </div>
@@ -1293,8 +1293,7 @@
     <!-- MOBILE QR SYNC MODAL -->
     <div id="qr-modal" class="modal-backdrop" onclick="closeModalOnBackdrop(event)">
       <div class="modal-dialog" onclick="event.stopPropagation()" style="max-width:440px;text-align:center;">
-        <button class="modal-close-btn" onclick="closeQrModal()">✕</button>
-        <div style="font-size:32px;margin-bottom:8px;">📱</div>
+        <button class="modal-close-btn" onclick="closeQrModal()">&times;</button>
         <h2 style="font-size:18px;margin-bottom:4px;">Mobile Calendar Sync</h2>
         <p id="qr-subtitle" style="font-size:12px;color:var(--color-text-primary);margin-bottom:18px;">
           Scan with your iPhone / Android camera to import classes into Google Calendar or Apple Calendar.
@@ -1306,10 +1305,10 @@
 
         <div style="display:flex;flex-direction:column;gap:8px;margin-top:8px;">
           <button class="btn-primary" onclick="window.open('/api/export/ical')" style="width:100%;padding:10px;justify-content:center;">
-            📥 Download .ics Calendar File
+            Download .ics Calendar File
           </button>
           <button class="btn-secondary" onclick="copyCalendarLink()" style="width:100%;padding:10px;justify-content:center;">
-            📋 Copy Calendar Subscription Link
+            Copy Calendar Subscription Link
           </button>
         </div>
       </div>
@@ -1317,30 +1316,29 @@
 
     <!-- AI COPILOT FLOATING DRAWER -->
     <button class="copilot-launcher" onclick="toggleCopilot()">
-      <span>🤖</span> AI Timetable Copilot
+      AI Timetable Copilot
     </button>
 
     <div id="copilot-drawer" class="copilot-drawer">
       <div class="copilot-header">
         <div style="display:flex;align-items:center;gap:8px;">
-          <span style="font-size:16px;">🤖</span>
           <div>
             <div style="font-size:13px;font-weight:700;">AI Timetable Copilot</div>
             <div style="font-size:10px;color:#94a3b8;">Natural Language Scheduling Assistant</div>
           </div>
         </div>
-        <button onclick="toggleCopilot()" style="background:none;border:none;color:#fff;font-size:16px;cursor:pointer;">✕</button>
+        <button onclick="toggleCopilot()" style="background:none;border:none;color:#fff;font-size:16px;cursor:pointer;">&times;</button>
       </div>
 
       <div class="copilot-body" id="copilot-messages">
         <div class="copilot-msg bot">
-          👋 Hello! I am your <strong>AI Timetable Copilot</strong>. Ask me anything about faculty workloads, room availability, or what-if contingencies!
+          Hello! I am your <strong>AI Timetable Copilot</strong>. Ask me anything about faculty workloads, room availability, or what-if contingencies!
           <div class="copilot-chips">
-            <span class="copilot-chip" onclick="askCopilot('Who has the highest workload?')">⚡ Busiest Faculty</span>
-            <span class="copilot-chip" onclick="askCopilot('Is Dr. Alan Turing free on Friday?')">🔍 Dr. Turing Availability</span>
-            <span class="copilot-chip" onclick="askCopilot('Which rooms have the highest utilization?')">🏢 Room Usage</span>
-            <span class="copilot-chip" onclick="askCopilot('Show me the quality radar score')">🎯 Quality Radar</span>
-            <span class="copilot-chip" onclick="askCopilot('What happens if Room 101 closes?')">🚨 What-If Simulation</span>
+            <span class="copilot-chip" onclick="askCopilot('Who has the highest workload?')">Busiest Faculty</span>
+            <span class="copilot-chip" onclick="askCopilot('Is Dr. Alan Turing free on Friday?')">Dr. Turing Availability</span>
+            <span class="copilot-chip" onclick="askCopilot('Which rooms have the highest utilization?')">Room Usage</span>
+            <span class="copilot-chip" onclick="askCopilot('Show me the quality radar score')">Quality Radar</span>
+            <span class="copilot-chip" onclick="askCopilot('What happens if Room 101 closes?')">What-If Simulation</span>
           </div>
         </div>
       </div>
@@ -1354,7 +1352,7 @@
     <!-- EXPLAINABILITY MODAL -->
     <div id="explain-modal" class="modal-backdrop" onclick="closeModalOnBackdrop(event)">
       <div class="modal-dialog" onclick="event.stopPropagation()">
-        <button class="modal-close-btn" onclick="closeExplainModal()">✕</button>
+        <button class="modal-close-btn" onclick="closeExplainModal()">&times;</button>
         <div style="margin-bottom:16px;">
           <span id="modal-session-type" style="font-size:10px;font-weight:700;letter-spacing:0.04em;padding:2px 6px;border-radius:3px;background:#111;color:#fff;text-transform:uppercase;">THEORY</span>
           <h2 id="modal-course-title" style="font-size:18px;margin-top:8px;margin-bottom:4px;">CS101 - Operating Systems</h2>
@@ -1363,21 +1361,21 @@
 
         <div style="margin-bottom:18px;">
           <h4 style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.04em;margin-bottom:8px;color:#15803d;">
-            ✅ Hard Constraints Audit (Zero-Tolerance Verification)
+            Hard Constraints Audit (Zero-Tolerance Verification)
           </h4>
           <div id="modal-hard-checks" style="display:flex;flex-direction:column;gap:8px;"></div>
         </div>
 
         <div style="margin-bottom:18px;">
           <h4 style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.04em;margin-bottom:8px;color:#b45309;">
-            🧠 CSP Heuristics & Search Trace
+            CSP Heuristics & Search Trace
           </h4>
           <div id="modal-search-trace" style="background:var(--color-surface-strong);border:1px solid var(--color-border-muted);padding:12px;border-radius:6px;font-size:12px;line-height:19px;"></div>
         </div>
 
         <div>
           <h4 style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.04em;margin-bottom:8px;color:var(--color-text-secondary);">
-            ⭐ Soft Optimization Objectives
+            Soft Optimization Objectives
           </h4>
           <div id="modal-soft-impacts" style="display:flex;flex-direction:column;gap:6px;font-size:12px;"></div>
         </div>
@@ -1389,7 +1387,7 @@
     <div id="tour-popover" class="tour-popover">
       <div style="display:flex;justify-content:space-between;align-items:flex-start;">
         <span id="tour-step-badge" class="tour-badge">Step 1 of 8</span>
-        <button onclick="endTour()" style="background:none;border:none;font-size:15px;cursor:pointer;color:#9ca3af;padding:2px 6px;line-height:1;">✕</button>
+        <button onclick="endTour()" style="background:none;border:none;font-size:15px;cursor:pointer;color:#9ca3af;padding:2px 6px;line-height:1;">&times;</button>
       </div>
       <div id="tour-step-title" class="tour-title">Welcome</div>
       <div id="tour-step-text" class="tour-text">Description</div>
@@ -1559,7 +1557,7 @@
             html += `
               <td>
                 <div class="${chipClass}" style="cursor:pointer;transition:transform 0.15s ease;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'" onclick="openExplainModal('${matching.variable_id}')" title="Click to inspect AI explainability & constraint proof">
-                  <div class="session-code">${matching.course_code} • ${labTag} 🔍</div>
+                  <div class="session-code">${matching.course_code} • ${labTag}</div>
                   <div class="session-meta">${matching.room_name}</div>
                   <div class="session-meta">Prof. ${matching.faculty_name.split(' ').slice(-1)[0]}</div>
                 </div>
@@ -1647,7 +1645,7 @@
           tbody.innerHTML += `
             <tr>
               <td><b>${r.algorithm}</b></td>
-              <td><span style="color:#15803d;font-weight:600;">${r.solved ? '✅ Optimal' : '❌ Timeout'}</span></td>
+              <td><span style="color:#15803d;font-weight:600;">${r.solved ? 'Optimal' : ' Timeout'}</span></td>
               <td><b>${r.time_ms} ms</b></td>
               <td>${r.nodes_or_steps}</td>
               <td>${r.backtracks_or_conflicts}</td>
@@ -1700,7 +1698,7 @@
           if (data.reassigned_details.length > 0) {
             reportHtml += `<b>Reassigned Sessions (${data.reassigned_count}):</b><br/>`;
             data.reassigned_details.forEach(item => {
-              reportHtml += `• <b>${item.course_code} (${item.batch_id})</b>: Moved from ${item.old_slot} ➔ <b>${item.new_slot} in Room ${item.room}</b><br/>`;
+              reportHtml += `• <b>${item.course_code} (${item.batch_id})</b>: Moved from ${item.old_slot} &rarr; <b>${item.new_slot} in Room ${item.room}</b><br/>`;
             });
           }
           detBox.innerHTML = reportHtml;
@@ -1734,7 +1732,7 @@
           if (data.reassigned_details.length > 0) {
             reportHtml += `<b>Room Reroutes (${data.reassigned_count}):</b><br/>`;
             data.reassigned_details.forEach(item => {
-              reportHtml += `• <b>${item.course_code} (${item.batch_id})</b>: Swapped from ${item.old_room} ➔ <b>${item.new_room}</b> at same slot (${item.slot})<br/>`;
+              reportHtml += `• <b>${item.course_code} (${item.batch_id})</b>: Swapped from ${item.old_room} &rarr; <b>${item.new_room}</b> at same slot (${item.slot})<br/>`;
             });
           }
           detBox.innerHTML = reportHtml;
@@ -1928,7 +1926,7 @@
         exp.hard_checks.forEach(hc => {
           hcContainer.innerHTML += `
             <div style="background:#f0fdf4;border:1px solid #bbf7d0;padding:8px 12px;border-radius:6px;font-size:12px;">
-              <span style="font-weight:700;color:#15803d;">✅ ${hc.constraint}:</span> ${hc.detail}
+              <span style="font-weight:700;color:#15803d;">${hc.constraint}:</span> ${hc.detail}
             </div>
           `;
         });
@@ -1945,7 +1943,7 @@
         const siContainer = document.getElementById('modal-soft-impacts');
         siContainer.innerHTML = '';
         exp.soft_impacts.forEach(si => {
-          const icon = si.achieved ? '⭐' : 'ℹ️';
+          const icon = si.achieved ? '' : 'ℹ️';
           siContainer.innerHTML += `
             <div style="background:var(--color-surface-strong);border:1px solid var(--color-border-muted);padding:8px 12px;border-radius:6px;">
               <span style="font-weight:600;">${icon} ${si.preference}:</span> ${si.detail}
@@ -1997,7 +1995,7 @@
     function copyCalendarLink() {
       const calUrl = window.location.origin + '/api/export/ical';
       navigator.clipboard.writeText(calUrl).then(() => {
-        showToast('📋 Calendar link copied to clipboard!');
+        showToast('Calendar link copied to clipboard!');
       }).catch(() => {
         showToast('Link: ' + calUrl);
       });
@@ -2032,7 +2030,7 @@
 
       // Typing indicator
       const typingId = 'typing-' + Date.now();
-      msgBox.innerHTML += `<div class="copilot-msg bot" id="${typingId}">Thinking... 🧠</div>`;
+      msgBox.innerHTML += `<div class="copilot-msg bot" id="${typingId}">Thinking... </div>`;
       msgBox.scrollTop = msgBox.scrollHeight;
 
       try {
@@ -2058,11 +2056,11 @@
           actionsHtml = '<div class="copilot-chips" style="margin-top:10px;">';
           data.actions.forEach(act => {
             if (act.tab) {
-              actionsHtml += `<span class="copilot-chip" onclick="switchTab('${act.tab}'); toggleCopilot();">👉 ${act.label}</span>`;
+              actionsHtml += `<span class="copilot-chip" onclick="switchTab('${act.tab}'); toggleCopilot();">${act.label}</span>`;
             } else if (act.query) {
-              actionsHtml += `<span class="copilot-chip" onclick="askCopilot('${act.query}')">💬 ${act.label}</span>`;
+              actionsHtml += `<span class="copilot-chip" onclick="askCopilot('${act.query}')">${act.label}</span>`;
             } else if (act.filter_type) {
-              actionsHtml += `<span class="copilot-chip" onclick="applyCopilotFilter('${act.filter_type}', '${act.filter_val}')">🔍 ${act.label}</span>`;
+              actionsHtml += `<span class="copilot-chip" onclick="applyCopilotFilter('${act.filter_type}', '${act.filter_val}')">${act.label}</span>`;
             }
           });
           actionsHtml += '</div>';
@@ -2079,7 +2077,7 @@
       } catch (err) {
         const typingEl = document.getElementById(typingId);
         if (typingEl) typingEl.remove();
-        msgBox.innerHTML += `<div class="copilot-msg bot" style="color:#b91c1c;">⚠️ Error consulting copilot: ${err}</div>`;
+        msgBox.innerHTML += `<div class="copilot-msg bot" style="color:#b91c1c;">Warning: Error consulting copilot: ${err}</div>`;
         msgBox.scrollTop = msgBox.scrollHeight;
       }
     }
@@ -2215,7 +2213,7 @@
 
       if (step.action === 'BACKTRACK') {
         actionBadge.className = 'badge-backtrack';
-        actionBadge.innerText = '🚨 Conflict Backtrack';
+        actionBadge.innerText = 'Conflict Backtrack';
         slotEl.innerText = 'Rolling Back';
         domainBadge.innerText = 'Domain Wipeout';
         reasonEl.innerHTML = `<span style="color:#b91c1c;font-weight:700;">Backtracking triggered:</span> ${step.detail || 'No consistent slot assignments remained. Reverting state.'}`;
@@ -2223,7 +2221,7 @@
         actionBadge.className = 'badge-assign';
         actionBadge.style.background = '#eff6ff';
         actionBadge.style.color = '#1d4ed8';
-        actionBadge.innerText = '🎯 MRV Select';
+        actionBadge.innerText = 'MRV Select';
         slotEl.innerText = 'Choosing Best Value';
         domainBadge.innerText = 'Evaluating Domains';
         reasonEl.innerHTML = step.detail;
@@ -2231,7 +2229,7 @@
         actionBadge.className = 'badge-assign';
         actionBadge.style.background = '#f0fdf4';
         actionBadge.style.color = '#15803d';
-        actionBadge.innerText = '✅ ' + (step.action === 'FORWARD_CHECK' ? 'Forward Check' : 'Try Assign');
+        actionBadge.innerText = '' + (step.action === 'FORWARD_CHECK' ? 'Forward Check' : 'Try Assign');
         slotEl.innerText = slotDesc;
         domainBadge.innerText = `${step.pruned_count || 0} Domains Pruned`;
         reasonEl.innerHTML = step.detail;
@@ -2309,7 +2307,7 @@
       if (STEPPER_INTERVAL) {
         clearInterval(STEPPER_INTERVAL);
         STEPPER_INTERVAL = null;
-        document.getElementById('stepper-play-btn').innerText = '▶️ Auto Play';
+        document.getElementById('stepper-play-btn').innerText = 'Auto Play';
       }
     }
 
@@ -2321,89 +2319,89 @@
         target: '.title-block',
         tab: 'explorer',
         badge: 'Step 1 of 9 • Overview',
-        title: '🎓 Welcome to the AI Timetable Platform',
+        title: 'Welcome to the AI Timetable Platform',
         text: 'This system models university academic timetabling as a <b>Constraint Satisfaction Problem (CSP)</b>. It automatically schedules courses, teachers, and physical classrooms with 100% mathematical zero-conflict guarantees in milliseconds.',
-        action: '💡 <b>What it does:</b> Solves NP-hard university timetabling without any human double-booking errors.'
+        action: '<b>What it does:</b> Solves NP-hard university timetabling without any human double-booking errors.'
       },
       {
         target: '.kpi-grid',
         tab: 'explorer',
         badge: 'Step 2 of 9 • Quality Metrics',
-        title: '📊 Real-Time Schedule Quality KPIs',
+        title: 'Real-Time Schedule Quality KPIs',
         text: 'These 5 cards give an instant health audit of the generated schedule: <b>Total Sessions</b>, <b>Weekly Contact Hours</b>, <b>Hard Clashes (0)</b>, <b>Soft Penalty</b>, and <b>Solve Time</b>.',
-        action: '💡 <b>Key Viva Point:</b> Hard Clashes = 0 proves all hard constraints (no double-booked teachers/rooms) are fully satisfied.'
+        action: '<b>Key Viva Point:</b> Hard Clashes = 0 proves all hard constraints (no double-booked teachers/rooms) are fully satisfied.'
       },
       {
         target: '.solver-controls',
         tab: 'explorer',
         badge: 'Step 3 of 9 • Optimization Engines',
-        title: '🎛️ AI Algorithm Selector & Engine',
+        title: 'AI Algorithm Selector & Engine',
         text: 'Compare 4 different search algorithms: <b>Backtracking with MRV & Forward Checking</b>, <b>Google OR-Tools CP-SAT</b>, and <b>Min-Conflicts Local Search</b>.',
-        action: '⚡ <b>When you click "Re-compute Schedule":</b> The backend runs your selected AI algorithm live and generates a new optimal schedule!'
+        action: '<b>When you click "Re-compute Schedule":</b> The backend runs your selected AI algorithm live and generates a new optimal schedule!'
       },
       {
         target: '.export-group',
         tab: 'explorer',
         badge: 'Step 4 of 9 • Export Engine',
-        title: '💾 Multi-Format One-Click Export',
+        title: 'Multi-Format One-Click Export',
         text: 'Easily distribute the schedule to university stakeholders in standard official formats.',
-        action: '📥 <b>When you click these:</b> <b>Excel</b> downloads a color-coded spreadsheet, <b>PDF</b> generates a notice-board ready document, and <b>iCal</b> syncs with Google Calendar.'
+        action: '<b>When you click these:</b> <b>Excel</b> downloads a color-coded spreadsheet, <b>PDF</b> generates a notice-board ready document, and <b>iCal</b> syncs with Google Calendar.'
       },
       {
         target: '.table-container',
         tab: 'explorer',
         badge: 'Step 5 of 9 • Master Grid & Explainability',
-        title: '📅 Timetable Explorer & Click-to-Explain',
+        title: 'Timetable Explorer & Click-to-Explain',
         text: 'View the schedule by <b>Student Cohort</b>, <b>Faculty Member</b>, or <b>Classroom</b>.',
-        action: '🔍 <b>CRITICAL FOR VIVA:</b> Click on <b>ANY class card</b> on the grid to open the <b>AI Decision Inspector</b> and see the exact constraint proof of why it was placed in that slot!'
+        action: '<b>CRITICAL FOR VIVA:</b> Click on <b>ANY class card</b> on the grid to open the <b>AI Decision Inspector</b> and see the exact constraint proof of why it was placed in that slot!'
       },
       {
         target: '.nav-list li:nth-child(2)',
         tab: 'benchmark',
         badge: 'Step 6 of 9 • Performance Arena',
-        title: '⚡ Algorithm Arena (Comparative Benchmarks)',
+        title: 'Algorithm Arena (Comparative Benchmarks)',
         text: 'Addresses your teacher\'s syllabus requirement to compare multiple AI approaches.',
-        action: '⚔️ <b>When you click this tab:</b> Click "Run Benchmark Battle" to watch Backtracking, Local Search, and Google OR-Tools compete on runtime (ms) and states explored.'
+        action: '<b>When you click this tab:</b> Click "Run Benchmark Battle" to watch Backtracking, Local Search, and Google OR-Tools compete on runtime (ms) and states explored.'
       },
       {
         target: '.nav-list li:nth-child(4)',
         tab: 'fairness',
         badge: 'Step 7 of 11 • Responsible AI',
-        title: '⚖️ Responsible AI & Faculty Workload Fairness',
+        title: 'Responsible AI & Faculty Workload Fairness',
         text: 'Mandatory Rubric Component 5: Computes the <b>Gini Coefficient</b> of teaching hours across professors to guarantee workload fairness, and audits student cohort fatigue.',
-        action: '🛡️ <b>When you click this tab:</b> Inspect teaching load equity charts, morning vs afternoon balance, and ethical AI failure modes.'
+        action: '<b>When you click this tab:</b> Inspect teaching load equity charts, morning vs afternoon balance, and ethical AI failure modes.'
       },
       {
         target: '.nav-list li:nth-child(5)',
         tab: 'stepper',
         badge: 'Step 8 of 11 • Search Stepper',
-        title: '🎬 CSP Search Tree & Propagation Stepper',
+        title: 'CSP Search Tree & Propagation Stepper',
         text: 'Step under the hood to see the Backtracking search tree in action. Watch <b>MRV (Minimum Remaining Values)</b> select variables, <b>Forward Checking</b> prune domains, and <b>Backtracks</b> recover from dead ends.',
-        action: '▶️ <b>When you click this tab:</b> Press Auto Play or scrub through the search steps to see how the algorithm finds a solution!'
+        action: '<b>When you click this tab:</b> Press Auto Play or scrub through the search steps to see how the algorithm finds a solution!'
       },
       {
         target: '.nav-list li:nth-child(6)',
         tab: 'quality',
         badge: 'Step 9 of 11 • Quality Radar',
-        title: '🎯 Multi-Objective Quality Radar',
+        title: 'Multi-Objective Quality Radar',
         text: 'A 5-dimensional holistic spider chart evaluating constraint integrity, faculty equity, student spacing, room efficiency, and time distribution.',
-        action: '🕸️ <b>When you click this tab:</b> View the interactive Plotly radar chart and system optimization recommendations.'
+        action: '<b>When you click this tab:</b> View the interactive Plotly radar chart and system optimization recommendations.'
       },
       {
         target: '.copilot-launcher',
         tab: 'explorer',
         badge: 'Step 10 of 11 • AI Copilot',
-        title: '🤖 Conversational AI Timetable Copilot',
+        title: 'Conversational AI Timetable Copilot',
         text: 'Ask plain English questions like <i>"Who has the highest workload?"</i>, <i>"Is Dr. Turing free on Friday?"</i>, or <i>"Check Room 101 usage"</i>.',
-        action: '💬 <b>Try it anytime:</b> Click the floating AI Copilot button at the bottom-right to chat with your intelligent schedule assistant.'
+        action: '<b>Try it anytime:</b> Click the floating AI Copilot button at the bottom-right to chat with your intelligent schedule assistant.'
       },
       {
         target: '.nav-list li:nth-child(7)',
         tab: 'rescheduler',
         badge: 'Step 11 of 11 • Emergency Rescheduler',
-        title: '🚨 Emergency "What-If" Rescheduler',
+        title: 'Emergency "What-If" Rescheduler',
         text: 'Simulates sudden unexpected disruptions in university operations, such as a professor falling sick or a classroom closing for repairs.',
-        action: '🔄 <b>When you click this tab:</b> Choose an absent teacher or room and watch the AI dynamically reroute classes with minimal disruption to the rest of the campus.'
+        action: '<b>When you click this tab:</b> Choose an absent teacher or room and watch the AI dynamically reroute classes with minimal disruption to the rest of the campus.'
       }
     ];
 
@@ -2429,7 +2427,7 @@
         renderTourStep();
       } else {
         endTour();
-        showToast('🎉 Tour completed! You are ready to explore or present.');
+        showToast(' Tour completed! You are ready to explore or present.');
       }
     }
 
@@ -2471,7 +2469,7 @@
       document.getElementById('tour-step-action').innerHTML = step.action;
 
       document.getElementById('tour-prev-btn').style.display = currentTourStep === 0 ? 'none' : 'inline-block';
-      document.getElementById('tour-next-btn').innerText = currentTourStep === TOUR_STEPS.length - 1 ? 'Finish Guide 🎉' : 'Next ➔';
+      document.getElementById('tour-next-btn').innerText = currentTourStep === TOUR_STEPS.length - 1 ? 'Finish Guide ' : 'Next &rarr;';
 
       // Position popover
       setTimeout(() => {
