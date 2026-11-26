@@ -1,8 +1,7 @@
 """NetworkX Conflict Graph and Chromatic Graph Coloring Visualizer."""
 
-from typing import Dict, List, Tuple
+from typing import Any, Dict, List, Tuple
 import networkx as nx
-import plotly.graph_objects as go
 from src.models.entities import SessionVariable, SlotAssignment
 from src.models.dataset import DepartmentDataset
 
@@ -58,8 +57,10 @@ def build_conflict_graph(
     return G
 
 
-def generate_conflict_graph_figure(G: nx.Graph) -> go.Figure:
+def generate_conflict_graph_figure(G: nx.Graph) -> Any:
     """Renders a spring-layout 2D interactive Plotly graph of the conflict network."""
+    import plotly.graph_objects as go
+
     pos = nx.spring_layout(G, seed=42, k=0.35)
 
     edge_x = []

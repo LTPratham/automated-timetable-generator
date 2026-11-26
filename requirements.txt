@@ -1,21 +1,16 @@
+# Web API & Server
+fastapi>=0.110.0
+uvicorn>=0.27.0
+
 # Core Libraries
 pydantic>=2.5.0
 numpy>=1.26.0
-pandas>=2.1.0
 networkx>=3.2.0
 
 # Constraint Satisfaction & Optimization
 ortools>=9.8.0
 
-# UI & Visualization
-streamlit>=1.30.0
-plotly>=5.18.0
-
 # Exporting (Excel, PDF, iCal)
 openpyxl>=3.1.0
 reportlab>=4.0.0
 icalendar>=5.0.0
-
-# Testing
-pytest>=7.4.0
-
